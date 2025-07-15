@@ -11,4 +11,7 @@ mongoose.connect('mongodb+srv://jeeteshbudhani:jeet123@cluster0.21weuzy.mongodb.
   useUnifiedTopology: true,
 });
 
+const cors = require('cors');
+app.use(cors());
+
 module.exports = app;

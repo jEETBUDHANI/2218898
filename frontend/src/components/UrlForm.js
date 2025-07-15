@@ -18,10 +18,13 @@ export default function UrlForm() {
 
     try {
       const response = await fetch('http://localhost:5000/shorturls', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ url }),
-      });
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ url }),
+});
+      if (!response.ok) {
+        throw new Error('Failed to shorten URL');
+      } 
 
       const data = await response.json();
 
